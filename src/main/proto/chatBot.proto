@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files= false;
+option java_package = "com.communication.grpc.service";
+
+service Chat {
+    rpc sendMessage (Request) returns (Response) {}
+
+    rpc BidirectionalStreaming (stream Request) returns (stream Response) {}
+}
+message Request{
+    string request = 1;
+}
+
+message Response{
+    string response = 1;
+}
